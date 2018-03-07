@@ -1,0 +1,23 @@
+{
+  "name": "ar_module",
+  "version": "1.0.0",
+  "description": "modulo ar para dirstuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "augmented",
+    "reality"
+  ],
+  "author": "Alejandro Ravelo Julian & Antonio Cedeño Pozo",
+  "license": "ISC",
+  "dependencies": {
+    "aframe-always-fullscreen-component": "^1.0.0",
+    "aframe-mouse-cursor-component": "^0.5.2",
+    "ar.js": "^1.4.10",
+    "bower": "^1.8.2",
+    "three": "^0.90.0",
+    "three.ar.js": "^0.1.8"
+  }
+}

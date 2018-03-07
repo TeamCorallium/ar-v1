@@ -1,0 +1,74 @@
+.buttonLeft {
+    position: absolute;
+    left: 10px;
+    height: 30px;
+    width: 30px;
+    bottom: 40px;
+    background-image: url('../img/left.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.buttonTop {
+    position: absolute;
+    left: 40px;
+    height: 30px;
+    width: 30px;
+    bottom: 70px;
+    background-image: url('../img/up.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.buttonRight {
+    position: absolute;
+    left: 70px;
+    height: 30px;
+    width: 30px;    
+    bottom: 40px;
+    background-image: url('../img/right.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.buttonDown {
+    position: absolute;
+    left: 40px;
+    height: 30px;
+    width: 30px;
+    bottom: 10px;
+    background-image: url('../img/down.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.buttonRotate {
+    position: absolute;
+    left: 40px;
+    height: 30px;
+    width: 30px;
+    bottom: 40px;
+    background-image: url('../img/rotate.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.rotarText{
+    position: absolute;
+    left: 95px;
+    bottom: 15px;
+    margin-bottom: 0px !important;
+}
+
+#check {
+    position: absolute;
+    left: 75px;
+    bottom: 15px;
+}
+
+#arjsDebugUIContainer{
+    visibility: hidden !important;
+}
+
+.a-enter-vr{
+    visibility: hidden !important;
+}

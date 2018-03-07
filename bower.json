@@ -1,0 +1,30 @@
+{
+  "name": "ar_module",
+  "description": "modulo ar para dirstuff",
+  "main": "index.js",
+  "authors": [
+    "Alejandro Ravelo Julian & Antonio Cedeño Pozo"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "augmented",
+    "reality"
+  ],
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.3",
+    "bootstrap": "3.3.2",
+    "angular": "1.5.11",
+    "angular-ui-router": "0.2.15",
+    "aframe": "^0.7.1",
+    "oclazyload": "ocLazyLoad#^1.1.0"
+  }
+}
