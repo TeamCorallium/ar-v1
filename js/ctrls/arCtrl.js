@@ -37,6 +37,8 @@ app.controller('ArCtrl', ["$scope", "$window",
         };
 
         $scope.screenshotFunction = function() {
+            document.getElementById('screenshotAR').style.visibility = "none";
+
             var canvas = document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
 
             var video = document.querySelector('video');
@@ -63,6 +65,8 @@ app.controller('ArCtrl', ["$scope", "$window",
                 type: 'jpg',
                 quality: 0.7
             });
+
+            document.getElementById('screenshotAR').style.visibility = "block";
         };
     }
 ]);
