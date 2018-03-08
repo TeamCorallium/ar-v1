@@ -73,6 +73,14 @@
     border-radius: 20px;
 }
 
+.DebugButton {
+    position: absolute;
+    left: 20px;
+    height: 40px;
+    width: 40px;
+    bottom: 20px;
+}
+
 .rotarText {
     position: absolute;
     right: 95px;
@@ -106,12 +114,12 @@
 
 .rotationY {
     position: absolute !important;
-    top: 30px !important;
+    top: 50px !important;
     left: 40px !important;
 }
 
 .rotationZ {
     position: absolute !important;
-    top: 40px !important;
+    top: 80px !important;
     left: 40px !important;
 }

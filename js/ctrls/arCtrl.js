@@ -8,8 +8,8 @@ app.controller('ArCtrl', ["$scope", "$window",
         $scope.valueCheck = false;
 
         $scope.rotationValue = {
-            x: 3.7,
-            y: 5,
+            x: 0,
+            y: 0,
             z: 0
         };
 
@@ -76,6 +76,13 @@ app.controller('ArCtrl', ["$scope", "$window",
             });
 
             document.getElementById('screenshotAR').style.visibility = "block";
+        };
+
+        $scope.startDebugFunction = function() {
+            var obj3D = document.querySelector('#object3d').object3D.rotation;
+            $scope.rotationValue.x = obj3D.x;
+            $scope.rotationValue.y = obj3D.y;
+            $scope.rotationValue.z = obj3D.z;
         };
     }
 ]);
