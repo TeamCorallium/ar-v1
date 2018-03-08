@@ -37,9 +37,7 @@ app.controller('ArCtrl', ["$scope",
         };
 
         $scope.screenshotFunction = function(){
-            // document.querySelector('a-scene').components.screenshot.capture('perspective');
-            var Render=new THREE.WebGLRenderer({antialias: true, preserveDrawingBuffer: true});
-            window.open( Render.domElement.toDataURL("image/png"), "Final");
+            document.querySelector('a-scene').components.screenshot.capture('perspective');
         };
     }
 ]);
