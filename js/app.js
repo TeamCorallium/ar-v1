@@ -2,8 +2,7 @@
 
 angular.module("arDir", [
     'ui.router',
-    'oc.lazyLoad',
-    'angular-screenshot'
+    'oc.lazyLoad'
 ]);
 
 var app = angular.module('arApp', ['arDir']);

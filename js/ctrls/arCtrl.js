@@ -2,8 +2,8 @@ app.controller('ArCtrl', ["$scope", "$window",
     function($scope, $window) {
 
         $scope.patterDir = './patterns/patt.dirstuff';
-        $scope.objectUrl = './objects/monkey.obj';
-        $scope.mtlUrl = './objects/monkey.mtl';
+        $scope.objectUrl = './objects/emojiKiss.obj';
+        $scope.mtlUrl = './objects/emojiKiss.mtl';
 
         $scope.valueCheck = false;
 
@@ -36,18 +36,15 @@ app.controller('ArCtrl', ["$scope", "$window",
             }
         };
 
-        $scope.screenshotFunction = function(){            
-            // var canvas = document.getElementsByClassName('a-canvas');
+        $scope.screenshotFunction = function(){
             var canvas = document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
 
-            var video = document.querySelector('video');
-            
+            var video = document.querySelector('video');            
             var c = document.createElement("canvas");
             var ctx = c.getContext("2d");
             c.width = ($(window).width());
             c.height = ($(window).height());
             ctx.drawImage(video, 0, 0, ($(window).width()), ($(window).height()));
-            // window.open(c.toDataURL("image/png"));
 
             var canvasFinal = document.createElement("canvas");
             var ctx2 = canvasFinal.getContext('2d');
@@ -57,16 +54,7 @@ app.controller('ArCtrl', ["$scope", "$window",
             ctx2.drawImage(c, 0, 0, ($(window).width()), ($(window).height()));
             ctx2.drawImage(canvas, 0, 0, ($(window).width()), ($(window).height()));
 
-            window.open(canvasFinal.toDataURL("image/png"));
-
-            
-            // html2canvas(document.querySelector('video'),{                
-            //     width:($(window).width()),
-            //     height:($(window).height())
-            // }).then(canvas => {
-            //     // console.log(canvas);
-            //     window.open(canvas.toDataURL("image/png"));
-            // });
+            Canvas2Image.saveAsPNG(canvasFinal, ($(window).width()), ($(window).height()));
         };
     }
 ]);
