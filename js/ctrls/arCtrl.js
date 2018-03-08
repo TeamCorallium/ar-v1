@@ -7,39 +7,39 @@ app.controller('ArCtrl', ["$scope", "$window",
 
         $scope.valueCheck = false;
 
-        $scope.leftFunction = function(){
-            var obj3D = document.querySelector('#monkey').object3D.position;
+        $scope.leftFunction = function() {
+            var obj3D = document.querySelector('#object3d').object3D.position;
             obj3D.set(obj3D.x - 0.05, obj3D.y, obj3D.z);
         };
 
-        $scope.topFunction = function(){
-            var obj3D = document.querySelector('#monkey').object3D.position;
+        $scope.topFunction = function() {
+            var obj3D = document.querySelector('#object3d').object3D.position;
             obj3D.set(obj3D.x, obj3D.y, obj3D.z - 0.05);
         };
 
-        $scope.rightFunction = function(){
-            var obj3D = document.querySelector('#monkey').object3D.position;
+        $scope.rightFunction = function() {
+            var obj3D = document.querySelector('#object3d').object3D.position;
             obj3D.set(obj3D.x + 0.05, obj3D.y, obj3D.z);
         };
 
-        $scope.downFunction = function(){
-            var obj3D = document.querySelector('#monkey').object3D.position;
-            obj3D.set(obj3D.x, obj3D.y, obj3D.z + 0.05);        
+        $scope.downFunction = function() {
+            var obj3D = document.querySelector('#object3d').object3D.position;
+            obj3D.set(obj3D.x, obj3D.y, obj3D.z + 0.05);
         };
 
-        $scope.rotateFunction = function(){
-            var obj3D = document.querySelector('#monkey').object3D.rotation;
-            if ($scope.valueCheck){
+        $scope.rotateFunction = function() {
+            var obj3D = document.querySelector('#object3d').object3D.rotation;
+            if ($scope.valueCheck) {
                 obj3D.set(obj3D.x + 0.1, obj3D.y, obj3D.z);
             } else {
                 obj3D.set(obj3D.x, obj3D.y + 0.1, obj3D.z);
             }
         };
 
-        $scope.screenshotFunction = function(){
+        $scope.screenshotFunction = function() {
             var canvas = document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
 
-            var video = document.querySelector('video');            
+            var video = document.querySelector('video');
             var c = document.createElement("canvas");
             var ctx = c.getContext("2d");
             c.width = ($(window).width());
@@ -47,7 +47,7 @@ app.controller('ArCtrl', ["$scope", "$window",
             ctx.drawImage(video, 0, 0, ($(window).width()), ($(window).height()));
 
             var canvasFinal = document.createElement("canvas");
-            var body  = document.querySelector('body');            
+            var body = document.querySelector('body');
             canvasFinal.id = "myCanvas";
             var ctx2 = canvasFinal.getContext('2d');
             canvasFinal.width = ($(window).width());
