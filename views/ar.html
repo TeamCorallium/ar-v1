@@ -1,5 +1,5 @@
 <div ng-controller="ArCtrl">
-    <a-scene id="sceneAR" screenshotar always-fullscreen="platform:all; debug:false" arjs='debugUIEnabled: false; sourceType: webcam; detectionMode: mono_matrix; maxDetectionRate: 30;'>
+    <a-scene id="sceneAR" always-fullscreen="platform:all; debug:false" arjs='debugUIEnabled: false; sourceType: webcam; detectionMode: mono_matrix; maxDetectionRate: 30;'>
         <a-marker-camera mouse-cursor preset='custom' type='pattern' url='{{patterDir}}'>
                 <a-entity id="monkey" scale="0.4 0.4 0.4" position='0 0 0' obj-model="obj:url({{objectUrl}}); mtl:url({{mtlUrl}})">
                         <a-animation attribute="rotation" begin="click" dur="500" fill="backwards" to="30 30 360"></a-animation>
@@ -7,6 +7,8 @@
                 <a-cursor visible="false"></a-cursor>
         </a-marker-camera>
     </a-scene>
+
+    <input ng-click="screenshotFunction()" id="screenshotAR" type="button" class="btn buttonScreenshot"></input>
 
     <input ng-click="leftFunction()" id="left" type="button" class="btn buttonLeft"></input>
     <input ng-click="topFunction()" id="top" type="button" class="btn buttonTop"></input>

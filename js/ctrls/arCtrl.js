@@ -2,8 +2,8 @@ app.controller('ArCtrl', ["$scope",
     function($scope) {
 
         $scope.patterDir = './patterns/patt.dirstuff';
-        $scope.objectUrl = './objects/monkey.obj';
-        $scope.mtlUrl = './objects/monkey.mtl';
+        $scope.objectUrl = './objects/emojiKiss.obj';
+        $scope.mtlUrl = './objects/emojiKiss.mtl';
 
         $scope.valueCheck = false;
 
@@ -34,6 +34,11 @@ app.controller('ArCtrl', ["$scope",
             } else {
                 obj3D.set(obj3D.x, obj3D.y + 0.1, obj3D.z);
             }
+        };
+
+        $scope.screenshotFunction = function(){
+            console.log("screenshot");
+            document.querySelector('a-scene').components.screenshot.capture('perspective');
         };
     }
 ]);
