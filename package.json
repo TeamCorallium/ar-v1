@@ -17,7 +17,6 @@
     "aframe-mouse-cursor-component": "^0.5.2",
     "ar.js": "^1.4.10",
     "bower": "^1.8.2",
-    "html2canvas": "^1.0.0-alpha.10",
     "three": "^0.90.0",
     "three.ar.js": "^0.1.8"
   }
