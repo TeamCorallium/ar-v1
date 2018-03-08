@@ -101,17 +101,17 @@
 .rotationX {
     position: absolute !important;
     top: 20px !important;
-    left: 20px !important;
+    left: 40px !important;
 }
 
 .rotationY {
     position: absolute !important;
     top: 30px !important;
-    left: 20px !important;
+    left: 40px !important;
 }
 
 .rotationZ {
     position: absolute !important;
     top: 40px !important;
-    left: 20px !important;
+    left: 40px !important;
 }
