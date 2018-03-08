@@ -54,7 +54,7 @@ app.controller('ArCtrl', ["$scope", "$window",
             $scope.rotationValue.z = obj3D.z;
         };
 
-        $scope.updateRotation(x, y, z) {
+        $scope.updateRotation = function(x, y, z) {
             var obj3D = document.querySelector('#object3d').object3D.rotation;
             obj3D.set(x, y, z);
         };
