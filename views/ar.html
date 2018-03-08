@@ -8,15 +8,15 @@
         </a-marker-camera>
     </a-scene>
 
-    <p style="position: 'absolute'; bottom: 20px !important; left: 20px !important;">
-        {{rotationValue.x}}
-    </p>
-    <p style="position: 'absolute'; bottom: 20px !important; left: 30px !important;">
-        {{rotationValue.y}}
-    </p>
-    <p style="position: 'absolute'; bottom: 20px !important; left: 40px !important;">
-        {{rotationValue.z}}
-    </p>
+    <h1 class="rotationX">
+        X: {{rotationValue.x}}
+    </h1>
+    <h1 class="rotationY">
+        Y: {{rotationValue.y}}
+    </h1>
+    <h1 class="rotationZ">
+        Z: {{rotationValue.z}}
+    </h1>
 
     <button ng-click="screenshotFunction()" download="screenshot.png" id="screenshotAR" class="buttonScreenshot"></button>
 

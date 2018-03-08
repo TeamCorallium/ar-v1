@@ -28,7 +28,7 @@
     position: absolute;
     right: 10px;
     height: 30px;
-    width: 30px;    
+    width: 30px;
     bottom: 40px;
     background-image: url('../img/right.png');
     background-repeat: no-repeat;
@@ -61,7 +61,7 @@
     background-position: center;
 }
 
-.buttonScreenshot{
+.buttonScreenshot {
     position: absolute;
     right: 20px;
     height: 40px;
@@ -73,7 +73,7 @@
     border-radius: 20px;
 }
 
-.rotarText{
+.rotarText {
     position: absolute;
     right: 95px;
     bottom: 15px;
@@ -86,14 +86,32 @@
     bottom: 15px;
 }
 
-#arjsDebugUIContainer{
+#arjsDebugUIContainer {
     visibility: hidden !important;
 }
 
-.a-enter-vr{
+.a-enter-vr {
     visibility: hidden !important;
 }
 
-#myCanvas{
+#myCanvas {
     visibility: hidden !important;
+}
+
+.rotationX {
+    position: absolute !important;
+    top: 20px !important;
+    left: 20px !important;
+}
+
+.rotationY {
+    position: absolute !important;
+    top: 30px !important;
+    left: 20px !important;
+}
+
+.rotationZ {
+    position: absolute !important;
+    top: 40px !important;
+    left: 20px !important;
 }
