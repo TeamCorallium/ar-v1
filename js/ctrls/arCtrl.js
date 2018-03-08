@@ -13,13 +13,6 @@ app.controller('ArCtrl', ["$scope", "$window",
             z: 0
         };
 
-        $scope.init = function() {
-            var obj3D = document.querySelector('#object3d').object3D.rotation;
-            $scope.rotationValue.x = obj3D.x;
-            $scope.rotationValue.y = obj3D.y;
-            $scope.rotationValue.z = obj3D.z;
-        };
-
         $scope.leftFunction = function() {
             var obj3D = document.querySelector('#object3d').object3D.position;
             obj3D.set(obj3D.x - 0.05, obj3D.y, obj3D.z);
@@ -84,7 +77,5 @@ app.controller('ArCtrl', ["$scope", "$window",
 
             document.getElementById('screenshotAR').style.visibility = "block";
         };
-
-        $scope.init();
     }
 ]);
