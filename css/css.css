@@ -93,3 +93,7 @@
 .a-enter-vr{
     visibility: hidden !important;
 }
+
+#myCanvas{
+    visibility: hidden !important;
+}

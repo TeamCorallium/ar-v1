@@ -47,6 +47,8 @@ app.controller('ArCtrl', ["$scope", "$window",
             ctx.drawImage(video, 0, 0, ($(window).width()), ($(window).height()));
 
             var canvasFinal = document.createElement("canvas");
+            var body  = document.querySelector('body');            
+            canvasFinal.id = "myCanvas";
             var ctx2 = canvasFinal.getContext('2d');
             canvasFinal.width = ($(window).width());
             canvasFinal.height = ($(window).height());
@@ -54,7 +56,15 @@ app.controller('ArCtrl', ["$scope", "$window",
             ctx2.drawImage(c, 0, 0, ($(window).width()), ($(window).height()));
             ctx2.drawImage(canvas, 0, 0, ($(window).width()), ($(window).height()));
 
-            Canvas2Image.saveAsJPEG(canvasFinal, ($(window).width()), ($(window).height()));
+            // Canvas2Image.saveAsJPEG(canvasFinal, ($(window).width()), ($(window).height()));
+
+            body.appendChild(canvasFinal);
+
+            canvasToImage('myCanvas', {
+                name: 'dirstuffAR',
+                type: 'jpg',
+                quality: 1
+            });
         };
     }
 ]);

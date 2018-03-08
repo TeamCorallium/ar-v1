@@ -25,7 +25,6 @@
     "angular": "1.5.11",
     "angular-ui-router": "0.2.15",
     "aframe": "^0.7.1",
-    "oclazyload": "ocLazyLoad#^1.1.0",
-    "canvas2image": "*"
+    "oclazyload": "ocLazyLoad#^1.1.0"
   }
 }
