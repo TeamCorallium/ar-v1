@@ -7,6 +7,21 @@ app.controller('ArCtrl', ["$scope", "$window",
 
         $scope.valueCheck = false;
 
+        $scope.rotationValue = {
+            x: 0,
+            y: 0,
+            z: 0
+        };
+
+        $scope.init = function() {
+            var obj3D = document.querySelector('#object3d').object3D.rotation;
+            $scope.rotationValue.x = obj3D.x;
+            $scope.rotationValue.y = obj3D.y;
+            $scope.rotationValue.z = obj3D.z;
+        };
+
+        $scope.init();
+
         $scope.leftFunction = function() {
             var obj3D = document.querySelector('#object3d').object3D.position;
             obj3D.set(obj3D.x - 0.05, obj3D.y, obj3D.z);
@@ -34,6 +49,9 @@ app.controller('ArCtrl', ["$scope", "$window",
             } else {
                 obj3D.set(obj3D.x, obj3D.y + 0.1, obj3D.z);
             }
+            $scope.rotationValue.x = obj3D.x;
+            $scope.rotationValue.y = obj3D.y;
+            $scope.rotationValue.z = obj3D.z;
         };
 
         $scope.screenshotFunction = function() {

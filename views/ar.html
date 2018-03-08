@@ -1,12 +1,22 @@
 <div ng-controller="ArCtrl">
     <a-scene embeded id="sceneAR" always-fullscreen="platform:all; debug:false" arjs='debugUIEnabled: false; sourceType: webcam; detectionMode: mono_matrix; maxDetectionRate: 30;'>
         <a-marker-camera mouse-cursor preset='custom' type='pattern' url='{{patterDir}}'>
-            <a-entity rotation="180 330 0" id="object3d" scale="0.8 0.5 0.6" position='0 0 0' obj-model="obj:url({{objectUrl}}); mtl:url({{mtlUrl}})">
+            <a-entity id="object3d" scale="0.8 0.5 0.6" position='0 0 0' obj-model="obj:url({{objectUrl}}); mtl:url({{mtlUrl}})">
                 <!-- <a-animation attribute="rotation" begin="click" dur="500" fill="backwards" to="30 30 360"></a-animation> -->
             </a-entity>
             <!-- <a-cursor visible="false"></a-cursor> -->
         </a-marker-camera>
     </a-scene>
+
+    <p style="position: 'absolute'; bottom: 20px !important; left: 20px !important;">
+        {{rotationValue.x}}
+    </p>
+    <p style="position: 'absolute'; bottom: 20px !important; left: 30px !important;">
+        {{rotationValue.y}}
+    </p>
+    <p style="position: 'absolute'; bottom: 20px !important; left: 40px !important;">
+        {{rotationValue.z}}
+    </p>
 
     <button ng-click="screenshotFunction()" download="screenshot.png" id="screenshotAR" class="buttonScreenshot"></button>
 
