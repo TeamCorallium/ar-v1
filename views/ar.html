@@ -7,8 +7,8 @@
                 <a-cursor visible="false"></a-cursor>
         </a-marker-camera>
     </a-scene>
-
-    <input ng-click="screenshotFunction()" id="screenshotAR" type="button" class="btn buttonScreenshot"></input>
+    
+    <button ng-click="screenshotFunction()" download="screenshot.png" id="screenshotAR" class="buttonScreenshot"></button>
 
     <input ng-click="leftFunction()" id="left" type="button" class="btn buttonLeft"></input>
     <input ng-click="topFunction()" id="top" type="button" class="btn buttonTop"></input>
@@ -17,5 +17,5 @@
     <input ng-click="rotateFunction()" id="rotate" type="button" class="btn buttonRotate"></input>
 
     <input id="check" ng-model="valueCheck" type="checkbox">
-    <p class="rotarText">Rotar verticalmente</p>
+    <p id="checkText" class="rotarText">Rotar verticalmente</p>
 </div>

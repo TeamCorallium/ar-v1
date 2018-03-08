@@ -1,9 +1,9 @@
-app.controller('ArCtrl', ["$scope",
-    function($scope) {
+app.controller('ArCtrl', ["$scope", "$window",
+    function($scope, $window) {
 
         $scope.patterDir = './patterns/patt.dirstuff';
-        $scope.objectUrl = './objects/emojiKiss.obj';
-        $scope.mtlUrl = './objects/emojiKiss.mtl';
+        $scope.objectUrl = './objects/monkey.obj';
+        $scope.mtlUrl = './objects/monkey.mtl';
 
         $scope.valueCheck = false;
 
@@ -36,9 +36,26 @@ app.controller('ArCtrl', ["$scope",
             }
         };
 
-        $scope.screenshotFunction = function(){
-            // document.querySelector('a-scene').components.screenshot.capture('perspective');
-            console.log(document.querySelector('a-scene').components.screenshot);
+        $scope.screenshotFunction = function(){            
+            // var canvas = document.getElementsByClassName('a-canvas');
+            var canvas = document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
+
+            var video = document.querySelector('video');
+            var thumbs = document.querySelector('body');
+            var c = document.createElement("canvas");
+            var ctx = c.getContext("2d");
+            c.width = ($(window).width());
+            c.height = ($(window).height());
+            ctx.drawImage(video, 0, 0, ($(window).width()), ($(window).height()));
+            // window.open(c.toDataURL("image/png"));
+
+            // html2canvas(document.querySelector('video'),{                
+            //     width:($(window).width()),
+            //     height:($(window).height())
+            // }).then(canvas => {
+            //     // console.log(canvas);
+            //     window.open(canvas.toDataURL("image/png"));
+            // });
         };
     }
 ]);
