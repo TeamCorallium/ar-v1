@@ -37,7 +37,8 @@ app.controller('ArCtrl', ["$scope",
         };
 
         $scope.screenshotFunction = function(){
-            document.querySelector('a-scene').components.screenshot.capture('perspective');
+            // document.querySelector('a-scene').components.screenshot.capture('perspective');
+            console.log(document.querySelector('a-scene').components.screenshot);
         };
     }
 ]);
