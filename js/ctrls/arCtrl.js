@@ -9,7 +9,7 @@ app.controller('ArCtrl', ["$scope", "$window",
 
         $scope.rotationValue = {
             x: 3.7,
-            y: 6,
+            y: 5,
             z: 0
         };
 
@@ -36,9 +36,9 @@ app.controller('ArCtrl', ["$scope", "$window",
         $scope.rotateFunction = function() {
             var obj3D = document.querySelector('#object3d').object3D.rotation;
             if ($scope.valueCheck) {
-                obj3D.set($scope.rotationValue.x + 0.1, $scope.rotationValue.y, $scope.rotationValue.z);
+                obj3D.set(obj3D.x + 0.1, obj3D.y, obj3D.z);
             } else {
-                obj3D.set($scope.rotationValue.x, $scope.rotationValue.y + 0.1, $scope.rotationValue.z);
+                obj3D.set(obj3D.x, obj3D.y + 0.1, obj3D.z);
             }
             $scope.rotationValue.x = obj3D.x;
             $scope.rotationValue.y = obj3D.y;
