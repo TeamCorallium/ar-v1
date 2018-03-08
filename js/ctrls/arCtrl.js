@@ -54,7 +54,7 @@ app.controller('ArCtrl', ["$scope", "$window",
             ctx2.drawImage(c, 0, 0, ($(window).width()), ($(window).height()));
             ctx2.drawImage(canvas, 0, 0, ($(window).width()), ($(window).height()));
 
-            Canvas2Image.saveAsPNG(canvasFinal, ($(window).width()), ($(window).height()));
+            Canvas2Image.saveAsJPEG(canvasFinal, ($(window).width()), ($(window).height()));
         };
     }
 ]);
