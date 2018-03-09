@@ -2,8 +2,8 @@ app.controller('ArCtrl', ["$scope", "$window",
     function($scope, $window) {
 
         $scope.patterDir = './patterns/patt.dirstuff';
-        $scope.objectUrl = './objects/emojiKiss.obj';
-        $scope.mtlUrl = './objects/emojiKiss.mtl';
+        $scope.objectUrl = './objects/emoji.obj';
+        $scope.mtlUrl = './objects/emoji.mtl';
 
         $scope.valueCheck = false;
 
@@ -34,9 +34,6 @@ app.controller('ArCtrl', ["$scope", "$window",
             } else {
                 obj3D.set(obj3D.x, obj3D.y + 0.1, obj3D.z);
             }
-            $scope.rotationValue.x = obj3D.x;
-            $scope.rotationValue.y = obj3D.y;
-            $scope.rotationValue.z = obj3D.z;
         };
 
         $scope.screenshotFunction = function() {
