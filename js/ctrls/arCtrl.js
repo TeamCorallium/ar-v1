@@ -2,8 +2,8 @@ app.controller('ArCtrl', ["$scope", "$window",
     function($scope, $window) {
 
         $scope.patterDir = './patterns/patt.dirstuff';
-        $scope.objectUrl = './objects/emoji.obj';
-        $scope.mtlUrl = './objects/emoji.mtl';
+        $scope.objectUrl = './objects/cubo.obj';
+        $scope.mtlUrl = './objects/cubo.mtl';
 
         $scope.valueCheck = false;
 
