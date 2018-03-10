@@ -115,6 +115,8 @@ app.controller('ArCtrl', ["$scope", "$window",
                 type: 'jpg',
                 quality: 0.7
             });
+
+            body.removeChild(c);
         };
     }
 ]);
