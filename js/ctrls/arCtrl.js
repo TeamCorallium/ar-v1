@@ -8,76 +8,113 @@ app.controller('ArCtrl', ["$scope", "$window",
         $scope.valueCheck = false;
 
         $scope.type = '';
+        $scope.portrait = true;
+        $scope.landscape = false;
+        $scope.widthScreen = 1280;
+        $scope.heightScreen = 800;
 
         function getOrientation(){
             $scope.type = window.innerWidth > window.innerHeight ? "Landscape" : "Portrait";
-            console.log($scope.type + " orientation");
+
+            if ($scope.type == 'Landscape') {
+                $scope.portrait = false;
+                $scope.landscape = true;
+            } else {
+                $scope.landscape = false;
+                $scope.portrait = true;
+            }
+
+            $scope.widthScreen = $(window).width();
+            $scope.heightScreen = $(window).height();
         };
+
+        getOrientation();
 
         window.onresize = function(){ 
             getOrientation();
         };
 
         $scope.leftFunction = function() {
-            var obj3D = document.querySelector('#object3d').object3D.position;
+            if ($scope.type == 'Portrait'){
+                var obj3D = document.querySelector('#object3dPortrait').object3D.position;
+                document.querySelector('#object3dLandscape').style.visibility = "none";
+            } else {
+                var obj3D = document.querySelector('#object3dLandscape').object3D.position;
+                document.querySelector('#object3dPortrait').style.visibility = "none";
+            }
             obj3D.set(obj3D.x - 0.05, obj3D.y, obj3D.z);
         };
 
         $scope.topFunction = function() {
-            var obj3D = document.querySelector('#object3d').object3D.position;
+            if ($scope.type == 'Portrait'){
+                var obj3D = document.querySelector('#object3dPortrait').object3D.position;
+                document.querySelector('#object3dLandscape').style.visibility = "none";
+            } else {
+                var obj3D = document.querySelector('#object3dLandscape').object3D.position;
+                document.querySelector('#object3dPortrait').style.visibility = "none";
+            }
             obj3D.set(obj3D.x, obj3D.y, obj3D.z - 0.05);
         };
 
         $scope.rightFunction = function() {
-            var obj3D = document.querySelector('#object3d').object3D.position;
+            if ($scope.type == 'Portrait'){
+                var obj3D = document.querySelector('#object3dPortrait').object3D.position;
+                document.querySelector('#object3dLandscape').style.visibility = "none";
+            } else {
+                var obj3D = document.querySelector('#object3dLandscape').object3D.position;
+                document.querySelector('#object3dPortrait').style.visibility = "none";
+            }
             obj3D.set(obj3D.x + 0.05, obj3D.y, obj3D.z);
         };
 
         $scope.downFunction = function() {
-            var obj3D = document.querySelector('#object3d').object3D.position;
+            if ($scope.type == 'Portrait'){
+                var obj3D = document.querySelector('#object3dPortrait').object3D.position;
+                document.querySelector('#object3dLandscape').style.visibility = "none";
+            } else {
+                var obj3D = document.querySelector('#object3dLandscape').object3D.position;
+                document.querySelector('#object3dPortrait').style.visibility = "none";
+            }
             obj3D.set(obj3D.x, obj3D.y, obj3D.z + 0.05);
         };
 
-        $scope.rotateFunction = function() {
-            var obj3D = document.querySelector('#object3d').object3D.rotation;
-            if ($scope.valueCheck) {
-                obj3D.set(obj3D.x + 0.1, obj3D.y, obj3D.z);
-            } else {
-                obj3D.set(obj3D.x, obj3D.y + 0.1, obj3D.z);
-            }
-        };
+        // $scope.rotateFunction = function() {
+        // if ($scope.type == 'Portrait'){
+        //     var obj3D = document.querySelector('#object3dPortrait').object3D.position;
+        //     document.querySelector('#object3dLandscape').style.visibility = "none";
+        // } else {
+        //     var obj3D = document.querySelector('#object3dLandscape').object3D.position;
+        //     document.querySelector('#object3dPortrait').style.visibility = "none";
+        // }
+        //     if ($scope.valueCheck) {
+        //         obj3D.set(obj3D.x + 0.1, obj3D.y, obj3D.z);
+        //     } else {
+        //         obj3D.set(obj3D.x, obj3D.y + 0.1, obj3D.z);
+        //     }
+        // };
 
         $scope.screenshotFunction = function() {
-            document.getElementById('screenshotAR').style.visibility = "none";
+            var body = document.querySelector('body');
+            var video = document.querySelector('video');
+
+            var c = document.createElement("canvas");
+            c.id = "myCanvas";
+            var ctx = c.getContext("2d");
+            c.width = $scope.widthScreen;
+            c.height = $scope.heightScreen;
+            ctx.drawImage(video, 0, 0, $scope.widthScreen, $scope.heightScreen);
 
             var canvas = document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
+         
+            ctx.drawImage(canvas, 0, 0, $scope.widthScreen, $scope.heightScreen);
 
-            var video = document.querySelector('video');
-            var c = document.createElement("canvas");
-            var ctx = c.getContext("2d");
-            c.width = ($(window).width());
-            c.height = ($(window).height());
-            ctx.drawImage(video, 0, 0, ($(window).width()), ($(window).height()));
-
-            var canvasFinal = document.createElement("canvas");
-            var body = document.querySelector('body');
-            canvasFinal.id = "myCanvas";
-            var ctx2 = canvasFinal.getContext('2d');
-            canvasFinal.width = ($(window).width());
-            canvasFinal.height = ($(window).height());
-
-            ctx2.drawImage(c, 0, 0, ($(window).width()), ($(window).height()));
-            ctx2.drawImage(canvas, 0, 0, ($(window).width()), ($(window).height()));
-
-            body.appendChild(canvasFinal);
+            body.appendChild(c);
 
             canvasToImage('myCanvas', {
                 name: 'dirstuffAR',
                 type: 'jpg',
                 quality: 0.7
             });
-
-            document.getElementById('screenshotAR').style.visibility = "block";
         };
     }
 ]);
