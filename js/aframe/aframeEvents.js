@@ -1,9 +1,12 @@
-AFRAME.registerComponent('screenshotar', {
+AFRAME.registerComponent('moveLeft', {
     schema: {},
     init: function() {
+        console.log("init");
             var scene1 = document.querySelector('a-scene');
-            scene1.addEventListener('touchmove', handleMove);
+            // scene1.addEventListener('touchmove', handleMove);
             scene1.addEventListener('touchend', handleEnd);
+            scene1.addEventListener('touchpress', handlePress);
+            scene1.addEventListener('mousepress', clickPress);
         }
         // update: function () {
         //     console.log("update");
@@ -22,12 +25,11 @@ AFRAME.registerComponent('screenshotar', {
         // }
 });
 
-var screenshotFlag = false;
 
-function handleMove(evt) {
-    evt.preventDefault();
+// function handleMove(evt) {
+//     evt.preventDefault();
 
-    var touches = evt.changedTouches;
+//     var touches = evt.changedTouches;
 
     // if (touches.length == 3) {
     //     if (touches[touches.length -1].pageY - touches[0].pageY > 10) {
@@ -37,9 +39,17 @@ function handleMove(evt) {
     //         }
     //     }
     // }
-};
+// };
 
 function handleEnd(evt) {
     evt.preventDefault();
     // screenshotFlag = false;
+};
+
+function handlePress(evt){
+    console.log("handlePress");
+};
+
+function clickPress(evt){
+    console.log("clickPress");
 };
