@@ -18,32 +18,6 @@ app.controller('ArCtrl', ["$scope", "$window",
             getOrientation();
         };
 
-        // var isMobile = {
-        //     Android: function() {
-        //         return navigator.userAgent.match(/Android/i);
-        //     },
-        //     BlackBerry: function() {
-        //         return navigator.userAgent.match(/BlackBerry/i);
-        //     },
-        //     iOS: function() {
-        //         return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-        //     },
-        //     Opera: function() {
-        //         return navigator.userAgent.match(/Opera Mini/i);
-        //     },
-        //     Windows: function() {
-        //         return navigator.userAgent.match(/IEMobile/i);
-        //     },
-        //     any: function() {
-        //         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-        //     }
-        // };
-
-        // if (isMobile.any()){
-        // }
-        // else {
-        // }
-
         $scope.leftFunction = function() {
             var obj3D = document.querySelector('#object3d').object3D.position;
             obj3D.set(obj3D.x - 0.05, obj3D.y, obj3D.z);
