@@ -7,33 +7,42 @@ app.controller('ArCtrl', ["$scope", "$window",
 
         $scope.valueCheck = false;
 
-        var isMobile = {
-            Android: function() {
-                return navigator.userAgent.match(/Android/i);
-            },
-            BlackBerry: function() {
-                return navigator.userAgent.match(/BlackBerry/i);
-            },
-            iOS: function() {
-                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-            },
-            Opera: function() {
-                return navigator.userAgent.match(/Opera Mini/i);
-            },
-            Windows: function() {
-                return navigator.userAgent.match(/IEMobile/i);
-            },
-            any: function() {
-                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-            }
+        $scope.type = '';
+
+        function getOrientation(){
+            $scope.type = window.innerWidth > window.innerHeight ? "Landscape" : "Portrait";
+            console.log($scope.type + " orientation");
         };
 
-        if (isMobile.any()){
-            alert("mobile");
-        }
-        else {
-            alert("windows");
-        }
+        window.onresize = function(){ 
+            getOrientation();
+        };
+
+        // var isMobile = {
+        //     Android: function() {
+        //         return navigator.userAgent.match(/Android/i);
+        //     },
+        //     BlackBerry: function() {
+        //         return navigator.userAgent.match(/BlackBerry/i);
+        //     },
+        //     iOS: function() {
+        //         return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        //     },
+        //     Opera: function() {
+        //         return navigator.userAgent.match(/Opera Mini/i);
+        //     },
+        //     Windows: function() {
+        //         return navigator.userAgent.match(/IEMobile/i);
+        //     },
+        //     any: function() {
+        //         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        //     }
+        // };
+
+        // if (isMobile.any()){
+        // }
+        // else {
+        // }
 
         $scope.leftFunction = function() {
             var obj3D = document.querySelector('#object3d').object3D.position;
