@@ -2,11 +2,11 @@ AFRAME.registerComponent('moveLeft', {
     schema: {},
     init: function() {
         console.log("init");
-            var scene1 = document.querySelector('a-scene');
-            // scene1.addEventListener('touchmove', handleMove);
-            scene1.addEventListener('touchend', handleEnd);
-            scene1.addEventListener('touchpress', handlePress);
-            scene1.addEventListener('mousepress', clickPress);
+        var scene1 = document.querySelector('a-scene');
+        // scene1.addEventListener('touchmove', handleMove);
+        scene1.addEventListener('touchend', handleEnd);
+        scene1.addEventListener('touchpress', handlePress);
+        scene1.addEventListener('mousepress', clickPress);
         }
         // update: function () {
         //     console.log("update");

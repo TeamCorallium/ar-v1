@@ -115,3 +115,7 @@
     top: 80px !important;
     left: 40px !important;
 }
+
+#left,#top,#right,#down,#screenshotAR{
+    cursor: pointer !important;
+}

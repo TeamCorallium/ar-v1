@@ -11,7 +11,7 @@ app.controller('ArCtrl', ["$scope", "$window",
         $scope.portrait = true;
         $scope.landscape = false;
         $scope.widthScreen = 1280;
-        $scope.heightScreen = 800;
+        $scope.heightScreen = 800;       
 
         function getOrientation(){
             $scope.type = window.innerWidth > window.innerHeight ? "Landscape" : "Portrait";
