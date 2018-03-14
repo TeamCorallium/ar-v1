@@ -1,5 +1,5 @@
-app.controller('ArCtrl', ["$scope", "$window",
-    function($scope, $window) {
+app.controller('ArCtrl', ["$scope", "$window", "$rootScope",
+    function($scope, $window, $rootScope) {
 
         $scope.patterDir = './patterns/patt.dirstuff';
         $scope.objectUrl = './objects/cubo.obj';
@@ -10,8 +10,8 @@ app.controller('ArCtrl', ["$scope", "$window",
         $scope.type = '';
         $scope.portrait = true;
         $scope.landscape = false;
-        $scope.widthScreen = 1280;
-        $scope.heightScreen = 800;
+        $scope.widthScreen = 1366;
+        $scope.heightScreen = 860;
 
         function getOrientation() {
             $scope.type = window.innerWidth > window.innerHeight ? "Landscape" : "Portrait";
@@ -31,9 +31,7 @@ app.controller('ArCtrl', ["$scope", "$window",
         getOrientation();
 
         $(window).on("resize.doResize", function() {
-            $scope.$apply(function() {
-                getOrientation();
-            });
+            getOrientation();
         });
 
         $scope.$on("$destroy", function() {
