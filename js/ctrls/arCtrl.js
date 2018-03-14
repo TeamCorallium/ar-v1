@@ -11,9 +11,9 @@ app.controller('ArCtrl', ["$scope", "$window",
         $scope.portrait = true;
         $scope.landscape = false;
         $scope.widthScreen = 1280;
-        $scope.heightScreen = 800;       
+        $scope.heightScreen = 800;
 
-        function getOrientation(){
+        function getOrientation() {
             $scope.type = window.innerWidth > window.innerHeight ? "Landscape" : "Portrait";
 
             if ($scope.type == 'Landscape') {
@@ -30,12 +30,18 @@ app.controller('ArCtrl', ["$scope", "$window",
 
         getOrientation();
 
-        window.onresize = function(){ 
-            getOrientation();
-        };
+        $(window).on("resize.doResize", function() {
+            $scope.$apply(function() {
+                getOrientation();
+            });
+        });
+
+        $scope.$on("$destroy", function() {
+            $(window).off("resize.doResize"); //remove the handler added earlier
+        });
 
         $scope.leftFunction = function() {
-            if ($scope.type == 'Portrait'){
+            if ($scope.type == 'Portrait') {
                 var obj3D = document.querySelector('#object3dPortrait').object3D.position;
                 document.querySelector('#object3dLandscape').style.visibility = "none";
             } else {
@@ -46,7 +52,7 @@ app.controller('ArCtrl', ["$scope", "$window",
         };
 
         $scope.topFunction = function() {
-            if ($scope.type == 'Portrait'){
+            if ($scope.type == 'Portrait') {
                 var obj3D = document.querySelector('#object3dPortrait').object3D.position;
                 document.querySelector('#object3dLandscape').style.visibility = "none";
             } else {
@@ -57,7 +63,7 @@ app.controller('ArCtrl', ["$scope", "$window",
         };
 
         $scope.rightFunction = function() {
-            if ($scope.type == 'Portrait'){
+            if ($scope.type == 'Portrait') {
                 var obj3D = document.querySelector('#object3dPortrait').object3D.position;
                 document.querySelector('#object3dLandscape').style.visibility = "none";
             } else {
@@ -68,7 +74,7 @@ app.controller('ArCtrl', ["$scope", "$window",
         };
 
         $scope.downFunction = function() {
-            if ($scope.type == 'Portrait'){
+            if ($scope.type == 'Portrait') {
                 var obj3D = document.querySelector('#object3dPortrait').object3D.position;
                 document.querySelector('#object3dLandscape').style.visibility = "none";
             } else {
@@ -105,7 +111,7 @@ app.controller('ArCtrl', ["$scope", "$window",
             ctx.drawImage(video, 0, 0, $scope.widthScreen, $scope.heightScreen);
 
             var canvas = document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
-         
+
             ctx.drawImage(canvas, 0, 0, $scope.widthScreen, $scope.heightScreen);
 
             body.appendChild(c);
